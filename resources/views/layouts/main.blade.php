@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Febrian Barbershop</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background-color: #111;
       font-family: 'Oswald', sans-serif;
       color: white;
     }
 
     .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: black;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: black;
       padding: 0 40px;
       height: 110px;
     }
 
-    /* Logo dan Brand area */
     .logo-area {
       display: flex;
       align-items: center;
@@ -38,7 +48,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 68.44px; /* sesuai tinggi logo */
+      height: 68.44px;
       font-size: 28px;
       line-height: 35px;
       letter-spacing: 0.05em;
@@ -49,7 +59,7 @@
     .brand-text .line-1 {
       display: flex;
       align-items: center;
-      gap: 6px; /* jarak antara FEBRIAN dan emoji */
+      gap: 6px;
       font-weight: 500;
     }
 
@@ -57,7 +67,6 @@
       font-weight: 500;
     }
 
-    /* Nav menu */
     .nav-menu {
       display: flex;
       gap: 40px;
@@ -77,10 +86,13 @@
       color: #999;
     }
 
-    /* Padding top supaya konten tidak tertutup navbar */
-
+    main {
+      padding-top: 110px;
+      /* agar tidak tertutup navbar */
+    }
   </style>
 </head>
+
 <body>
   <header class="navbar">
     <div class="logo-area">
@@ -92,16 +104,18 @@
     </div>
 
     <nav class="nav-menu">
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Service</a>
-      <a href="#">Gallery</a>
-      <a href="#">Our Product</a>
+      <a href="#home">Home</a>
+      <a href="#tentang">About Us</a>
+      <a href="#layanan">Service</a>
+      <a href="#galeri">Gallery</a>
+      <a href="#produk">Our Product</a>
     </nav>
+
   </header>
 
   <main>
     @yield('content')
   </main>
 </body>
+
 </html>
