@@ -17,4 +17,31 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
+Route::get('/', function () {
+    return view('pages.home');
+});
+
+Route::get('/tentang', function () {
+    return view('pages.tentang');
+});
+
+Route::get('/layanan', function () {
+    return view('pages.layanan');
+});
+
+Route::get('/galeri', function () {
+    return view('pages.galeri');
+});
+
+Route::get('/produk', function () {
+    return view('pages.produk'); // Buat file produk.blade.php nanti
+});
+
+
+// Admin
+Route::view('/admin/dashboard', 'admin.dashboard');
+
+
 require __DIR__.'/auth.php';
