@@ -14,6 +14,6 @@
       Febrian Barbershop!
     </p>
 
-    <a href="#booking" class="tentang-button">BOOKING NOW!</a>
+    <a href="#layanan" class="tentang-button">BOOKING NOW!</a>
   </div>
 </section>

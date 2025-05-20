@@ -34,18 +34,22 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background-color: black;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 40px;
-      height: 100px;
-      transition: background-color 0.3s ease;
+      padding: 0 30px;
+      height: 65px;
+      transition: background-color 0.3s ease, box-shadow 0.1s ease;
+      background-color: rgba(0, 0, 0, 0.01);
+      /* transparan awal */
     }
 
-    .navbar-transparent {
-      background-color: transparent !important;
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 1);
+      /* hitam solid saat scroll */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+
 
     .logo-area {
       display: flex;
@@ -54,13 +58,13 @@
     }
 
     .logo-img {
-      width: 44px;
-      height: 44px;
+      width: 38px;
+      height: 38px;
     }
 
     .brand-text {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      font-weight: 900;
       font-size: 20px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -76,7 +80,7 @@
     .nav-menu a {
       font-family: 'Montserrat', sans-serif;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 900;
       text-transform: uppercase;
       color: white;
       text-decoration: none;
@@ -86,6 +90,16 @@
     .nav-menu a:hover {
       color: #aaa;
     }
+
+    .navbar.white-on-layanan {
+      background-color: white !important;
+    }
+
+    .navbar.white-on-layanan .brand-text,
+    .navbar.white-on-layanan .nav-menu a {
+      color: black !important;
+    }
+
 
     /* HERO SECTION */
     #home.hero {
@@ -245,110 +259,132 @@
 
     #layanan {
       background: url("{{ asset('images/bg3.png') }}") center/cover no-repeat;
-      color: white;
+      color: #000;
       text-align: center;
-      padding: 100px 20px 220px;
+      padding: 100px 20px 200px;
       min-height: 100vh;
     }
 
-    .layanan-container {
-      max-width: 820px;
-      margin: 0 auto;
+    /* Judul */
+    .layanan-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .layanan-subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 60px;
+    }
+
+    /* Grid */
+    .layanan-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* Kartu */
+    .layanan-card {
+      width: 100%;
+      max-width: 360px;
+      background: linear-gradient(to bottom, #fff, #eaeaea, #d1d1d1);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      padding: 30px 25px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      transition: transform 0.3s ease;
     }
 
-    .layanan-title {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #000;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .layanan-subtitle {
-      font-size: 16px;
-      margin-bottom: 50px;
-      color: #333;
-    }
-
-    .layanan-grid {
-      display: flex;
-      gap: 30px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .layanan-card {
-      background: linear-gradient(to bottom, #ffffff, #dcdcdc);
-      border-radius: 12px;
-      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-      padding: 30px 20px;
-      width: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .layanan-card:hover {
+      transform: translateY(-8px);
     }
 
     .layanan-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #222;
+      font-size: 16px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 6px;
     }
 
     .layanan-card h4 {
-      font-size: 22px;
+      font-size: 26px;
       font-weight: bold;
-      margin: 5px 0;
       color: #000;
+      margin-bottom: 6px;
     }
 
     .layanan-card .durasi {
-      font-size: 14px;
-      margin-bottom: 20px;
+      font-size: 13px;
       color: #555;
+      margin-bottom: 20px;
     }
 
+    /* List */
     .layanan-card ul {
+      width: 100%;
       list-style: none;
       padding: 0;
-      margin: 0 0 30px;
-      width: 100%;
+      margin-bottom: 24px;
     }
 
     .layanan-card ul li {
-      background-color: rgba(0, 0, 0, 0.07);
-      margin-bottom: 5px;
-      padding: 10px;
-      border-radius: 4px;
       font-size: 14px;
-      color: #333;
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
+    .layanan-card ul li:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    /* Tombol */
     .layanan-card button {
-      background: #000;
+      background-color: #000;
       color: #fff;
-      padding: 12px 20px;
-      border: 2px solid #fff;
-      border-radius: 25px;
+      padding: 14px 26px;
+      font-size: 14px;
       font-weight: 600;
+      border-radius: 30px;
+      border: none;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     .layanan-card button:hover {
-      background: #fff;
-      color: #000;
-      border-color: #000;
+      background-color: #222;
     }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .layanan-card {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .layanan-title {
+        font-size: 36px;
+      }
+
+      .layanan-subtitle {
+        font-size: 16px;
+      }
+    }
+
 
     /* GALERI STYLE */
     .galeri-section {
       background-color: #000;
       color: #fff;
-      padding: 20px 0;
+      padding: 100px 0;
       text-align: center;
     }
 
@@ -442,21 +478,35 @@
     @yield('content')
   </main>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      const home = document.getElementById('home');
-      if (!home) return;
-      const scrollY = window.scrollY;
-      const homeHeight = home.offsetHeight;
-      if (scrollY < homeHeight) {
-        navbar.classList.add('navbar-transparent');
+<script>
+  const layananSection = document.querySelector('#layanan');
+  const navbar = document.querySelector('.navbar');
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const layananTop = layananSection.offsetTop;
+    const batasPutih = 200; // jarak awal layanan di mana navbar masih putih
+
+    // Jika scroll sudah masuk ke section layanan dan belum melewati batasPutih
+    if (scrollY >= layananTop - 100 && scrollY <= layananTop + batasPutih) {
+      navbar.classList.add('white-on-layanan');
+      navbar.classList.remove('scrolled');
+    } else {
+      navbar.classList.remove('white-on-layanan');
+
+      if (scrollY > 50) {
+        navbar.classList.add('scrolled');
       } else {
-        navbar.classList.remove('navbar-transparent');
+        navbar.classList.remove('scrolled');
       }
-    });
-    window.dispatchEvent(new Event('scroll'));
-  </script>
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('load', handleScroll);
+</script>
+
+
 
 </body>
 

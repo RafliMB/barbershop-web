@@ -11,7 +11,7 @@
         <p class="durasi">30 minutes / session</p>
         <ul>
           <li>Haircut sesuai keinginan dan permintaan customer</li>
-          <li>Pembersihan kulit kepala dengan shampo khusus dan hairdrayer</li>
+          <li>Pembersihan kulit kepala dengan shampo dan hairdrayer</li>
           <li>Pemberian layanan Hair Tonic atau Vitamin pada rambut</li>
           <li>Penggunaan Hot Towel dan Massage pada customer</li>
           <li>Styling menggunakan hair product sesuai keinginan</li>
@@ -23,9 +23,9 @@
       <div class="layanan-card">
         <h3>Coloring Service</h3>
         <h4>START IDR 100.000</h4>
-        <p class="durasi">60 minutes / session</p>
+        <p class="durasi">start 60 minutes / session</p>
         <ul>
-          <li>Warna sesuai gaya dan preferensi bebas keinginan customer</li>
+          <li>Warna sesuai gaya dan bebas keinginan customer</li>
           <li>Highlight, balayage, atau pewarnaan penuh</li>
           <li>Perawatan khusus sebelum pelayanan dan sesudah    </li>
           <li>Memakai produk pewarna berkualitas tinggi</li>
@@ -40,10 +40,12 @@
         <h4>START IDR 20.000</h4>
         <p class="durasi">start 15 minutes / session</p>
         <ul>
+          <li>Cut Only</li>
+          <li>Hair Mask</li>
+          <li>Wash & Styling</li>
           <li>Trim & Shave</li>
           <li>Chemical Perming</li>
           <li>Downperm & Rootlift</li>
-          <li>Hair Mask Sclap</li>
           <li>Keratin Treatment</li>
         </ul>
         <button>Buat Janji Sekarang</button>
