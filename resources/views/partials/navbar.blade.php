@@ -24,26 +24,27 @@ function handleScroll() {
   const brand = document.getElementById('brand-name');
   const links = navbar.querySelectorAll('a');
   const layananSection = document.getElementById('layanan');
+  if (!navbar || !brand || !layananSection) return;
+
   const layananTop = layananSection.offsetTop;
   const batasPutih = 600;
-
   const scrollY = window.scrollY;
 
   if (scrollY >= layananTop - 100 && scrollY <= layananTop + batasPutih) {
     // Di area section layanan: putih
-    navbar.classList.add('bg-white', 'shadow-md');
-    navbar.classList.remove('bg-black');
+    navbar.classList.add('!bg-white', 'shadow-md');
+    navbar.classList.remove('!bg-black');
     brand.classList.add('!text-black');
     links.forEach(a => a.classList.add('!text-black'));
   } else if (scrollY > 50) {
     // Scroll lewat sedikit: hitam
-    navbar.classList.add('bg-black', 'shadow-md');
-    navbar.classList.remove('bg-white');
+    navbar.classList.add('!bg-black', 'shadow-md');
+    navbar.classList.remove('!bg-white');
     brand.classList.remove('!text-black');
     links.forEach(a => a.classList.remove('!text-black'));
   } else {
     // Di posisi paling atas: transparan
-    navbar.classList.remove('bg-black', 'bg-white', 'shadow-md');
+    navbar.classList.remove('!bg-black', '!bg-white', 'shadow-md');
     brand.classList.remove('!text-black');
     links.forEach(a => a.classList.remove('!text-black'));
   }

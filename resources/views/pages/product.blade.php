@@ -1,6 +1,6 @@
-<div id="product" class="bg-black text-white px-4 py-16 font-sans">
-    <h2 class="text-center text-xl uppercase tracking-widest">Our Product</h2>
-    <h1 class="text-center text-4xl font-bold mt-2 mb-10">STYLING PRODUCTS WE TRUST</h1>
+<div id="product" class="bg-black text-white px-4 pt-28 pb-16 font-sans">
+    <h2 class="text-center text-xl uppercase tracking- mb-3">Our Product</h2>
+    <h1 class="text-center text-4xl font-bold mt-2 mb-20">STYLING PRODUCTS WE TRUST</h1>
 
     <!-- Produk -->
     <div class="flex flex-wrap justify-center gap-6">
@@ -43,7 +43,7 @@
                 <span class="w-1/6 text-center">Quantity</span>
             </div>
             <ul id="cart-list"></ul>
-            <div class="flex justify-end mt-4 px-2">
+            <div class="flex justify-end mt-5 px-2">
                 <div class="text-right">
                     <p class="text-sm text-gray-400">subtotal</p>
                     <p class="text-lg font-bold">IDR <span id="cart-total">0</span></p>
