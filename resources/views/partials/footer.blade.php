@@ -4,30 +4,32 @@
     <!-- Logo dan Kontak -->
     <div class="space-y-4">
       <!-- Logo besar -->
-      <img src="{{ asset('images/logo2.png') }}" alt="Logo" class="h-24 mb-10"> <!-- Ubah ke h-24 agar besar -->
+      <img src="{{ asset('images/logo2.png') }}" alt="Logo" class="h-24 mb-10">
 
       <!-- Email -->
       <div class="flex items-center gap-3">
-        <img src="{{ asset('images/mail.svg') }}" class="w-5 h-5" alt="mail">
+          <img src="{{ asset('images/email.png') }}" alt="Email" class="w-4 h-4">
         <span class="whitespace-nowrap">febrianbarbershop@gmail.com</span>
       </div>
 
       <!-- Jam -->
       <div class="flex items-center gap-3">
-        <img src="{{ asset('images/clock.svg') }}" class="w-5 h-5" alt="clock">
+          <img src="{{ asset('images/jam.png') }}" alt="Jam" class="w-4 h-4">
         <span class="whitespace-nowrap">Mulai Buka Pukul 09.00 - 21.00</span>
       </div>
 
       <!-- Telepon -->
       <div class="flex items-center gap-3">
-        <img src="{{ asset('images/phone.svg') }}" class="w-5 h-5" alt="phone">
+          <img src="{{ asset('images/telepon.png') }}" alt="Telepon" class="w-4 h-4">
         <span class="whitespace-nowrap">085865726621</span>
       </div>
 
       <!-- Alamat -->
       <div class="flex items-start gap-3">
-        <img src="{{ asset('images/map.svg') }}" class="w-5 h-5 mt-1" alt="map">
-        <span class="leading-snug">Jl. Pala Raya No.Desa, Kademangan, Mejasem Barat., Kec. Kramat, Kabupaten Tegal, Jawa Tengah 52181
+          <img src="{{ asset('images/alamat.png') }}" alt="Alamat" class="w-5 h-5">
+        <span class="leading-snug">
+          Jl. Pala Raya No.Desa, Kademangan, Mejasem Barat., Kec. Kramat, Kabupaten Tegal, Jawa Tengah 52181
+        </span>
       </div>
     </div>
 
@@ -45,28 +47,41 @@
 
     <!-- Newsletter -->
     <div>
-      <h3 class="text-base font-bold mb-4 ">Let's Stay in Touch</h3>
+      <h3 class="text-base font-bold mb-4">Let's Stay in Touch</h3>
       <p class="text-sm mb-4 leading-relaxed">
         Sign up with your email address to<br>
         receive news, promosi, and updates
       </p>
-      <input type="email" placeholder="Your Email Addresss"
+      <input type="email" placeholder="Your Email Address"
              class="w-full border border-black px-3 py-1 text-sm mb-2 focus:outline-none">
-      <button class="w-full border border-black py-1 font-semibold hover:bg-black hover:text-white transition">Submit</button>
+      <button class="w-full border border-black py-1 font-semibold hover:bg-black hover:text-white transition">
+        Submit
+      </button>
       <p class="text-xs mt-1">We respect your privacy.</p>
     </div>
 
     <!-- Social Media -->
-    <div>
-      <h3 class="text-base font-bold mb-4">Follow Us</h3>
-      <ul class="space-y-3 font-normal">
-        <li class="flex items-center gap-3"><img src="{{ asset('images/facebook.svg') }}" class="w-5 h-5"> Facebook</li>
-        <li class="flex items-center gap-3"><img src="{{ asset('images/twitter.svg') }}" class="w-5 h-5"> Twitter</li>
-        <li class="flex items-center gap-3"><img src="{{ asset('images/instagram.svg') }}" class="w-5 h-5"> Instagram</li>
-        <li class="flex items-center gap-3"><img src="{{ asset('images/tiktok.svg') }}" class="w-5 h-5"> Tiktok</li>
-        <li class="flex items-center gap-3"><img src="{{ asset('images/whatsapp.svg') }}" class="w-5 h-5"> WhatsApp</li>
-      </ul>
-    </div>
+      <div>
+        <h3 class="text-base font-bold mb-4">Follow Us</h3>
+        <ul class="space-y-3 font-normal">
+          <li class="flex items-center gap-3">
+            <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="w-4 h-4"> Facebook
+          </li>
+          <li class="flex items-center gap-3">
+            <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-4 h-4"> Twitter
+          </li>
+          <li class="flex items-center gap-3">
+            <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-4 h-4"> Instagram
+          </li>
+          <li class="flex items-center gap-3">
+            <img src="{{ asset('images/tiktok.png') }}" alt="Tiktok" class="w-4 h-4"> Tiktok
+          </li>
+          <li class="flex items-center gap-3">
+            <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" class="w-4 h-4"> WhatsApp
+          </li>
+        </ul>
+      </div>
+
 
   </div>
 
