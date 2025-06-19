@@ -37,11 +37,11 @@
     <div>
       <h3 class="text-base font-bold mb-4">Company</h3>
       <div class="grid grid-cols-2 gap-y-2 gap-x-6 font-normal">
-        <a href="#">Profile</a>
-        <a href="#">Galery</a>
-        <a href="#">Service</a>
-        <a href="#">Product</a>
-        <a href="#">Contact Us</a>
+        <a href="#tentang">Profile</a>
+        <a href="#galeri">Galery</a>
+        <a href="#layanan">Service</a>
+        <a href="#product">Product</a>
+        <a href="https://api.whatsapp.com/send?phone=6285865826621">Contact Us</a>
       </div>
     </div>
 
