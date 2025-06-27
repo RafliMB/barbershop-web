@@ -76,28 +76,39 @@
       <h3 class="text-base font-bold mb-4">Follow Us</h3>
       <ul class="space-y-3 font-normal">
         <li class="flex items-center gap-3">
-          <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="w-4 h-4"> Facebook
+          <a href="https://facebook.com/febrianbarbershop" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3">
+            <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="w-4 h-4"> Facebook
+          </a>
         </li>
         <li class="flex items-center gap-3">
-          <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-4 h-4"> Twitter
+          <a href="https://twitter.com/febrianbarbershop" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3">
+            <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-4 h-4"> Twitter
+          </a>
         </li>
         <li class="flex items-center gap-3">
-          <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-4 h-4"> Instagram
+          <a href="https://instagram.com/febrianbarbershop" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3">
+            <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-4 h-4"> Instagram
+          </a>
         </li>
         <li class="flex items-center gap-3">
-          <img src="{{ asset('images/tiktok.png') }}" alt="Tiktok" class="w-4 h-4"> Tiktok
+          <a href="https://tiktok.com/@febrianbarbershop" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3">
+            <img src="{{ asset('images/tiktok.png') }}" alt="Tiktok" class="w-4 h-4"> Tiktok
+          </a>
         </li>
         <li class="flex items-center gap-3">
-          <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" class="w-4 h-4"> WhatsApp
+          <a href="https://wa.me/+6285865826621" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3">
+            <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" class="w-4 h-4"> WhatsApp
+          </a>
         </li>
       </ul>
     </div>
+
 
 
   </div>
 
   <!-- Footer Bottom -->
   <div class="border-t border-black text-center py-4 text-xs">
-    © 2025 · Febrian Barbershop · dev by Pecinta Mie Ayam
+    © 2025 · Febrian Barbershop · dev by PecintaMieAyam
   </div>
 </footer>
