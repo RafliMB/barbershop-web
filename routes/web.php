@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
+use App\Http\Controllers\SubscribeController;
 
+Route::post('/subscribe', [SubscribeController::class, 'store'])->name('subscribe.store');
 
 Route::get('/', function () {
     $produk = Product::all();
