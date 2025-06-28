@@ -1,24 +1,51 @@
+# Stage 1: Composer Install Dependencies
+FROM composer:2.5 as vendor
+
+WORKDIR /app
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --no-scripts --prefer-dist
+
+# Stage 2: PHP-FPM + Nginx
 FROM php:8.2-fpm
 
+# Install packages & PHP extensions
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip unzip curl git sqlite3 libsqlite3-dev libzip-dev
+    nginx \
+    curl \
+    git \
+    unzip \
+    zip \
+    libzip-dev \
+    sqlite3 \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo pdo_sqlite zip
 
-RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite mbstring exif pcntl bcmath gd zip
+# Install Composer
+COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
+# Set working dir
 WORKDIR /var/www
 
+# Copy project files
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+# Copy vendor from stage 1
+COPY --from=vendor /app/vendor ./vendor
 
-RUN chmod -R 775 storage bootstrap/cache
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
 
-CMD php artisan serve --host=0.0.0.0 --port=10000
+# Copy entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Set proper permissions
+RUN mkdir -p storage/framework/{sessions,views,cache} \
+    && chmod -R 775 storage bootstrap/cache \
+    && chown -R www-data:www-data .
+
+# Laravel port via nginx
+EXPOSE 80
+
+# Start script
+CMD ["/entrypoint.sh"]
