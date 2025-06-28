@@ -2,22 +2,20 @@
 
 echo "🚀 Menjalankan setup Laravel di Railway..."
 
-# Pastikan database.sqlite ada
-if [ ! -f /var/www/database/database.sqlite ]; then
-    touch /var/www/database/database.sqlite
-    echo "📦 database.sqlite berhasil dibuat."
+# Generate APP_KEY jika belum ada
+if [ -z "$(grep ^APP_KEY= .env | cut -d '=' -f2)" ]; then
+    php artisan key:generate
+    echo "🔑 APP_KEY berhasil dibuat."
 fi
 
-# Clear & cache
+# Jalankan cache dan migrasi
 php artisan config:clear
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
-
-# Jalankan migrasi
 php artisan migrate --force
 
-# Start php-fpm dan nginx
-echo "✅ Laravel siap jalan..."
-service php8.2-fpm start
-nginx -g "daemon off;"
+# Jalankan php-fpm & nginx
+echo "✅ Memulai PHP-FPM & Nginx..."
+php-fpm -D               # ✅ FIX utama: jalankan PHP-FPM
+nginx -g "daemon off;"   # Tetap jalankan nginx seperti biasa
